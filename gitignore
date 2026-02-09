@@ -1,0 +1,52 @@
+# Compiler files
+cache/
+out/
+artifacts/
+build/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Hardhat
+cache
+artifacts
+typechain
+typechain-types
+
+# Foundry
+cache_hardhat
+cache_forge
+
+# Coverage reports
+coverage/
+coverage.json
+*.lcov
+
+# TypeScript
+*.tsbuildinfo
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Remix backup files
+*.sol~
+.deps/
+
+# Gas reports
+gasReporterOutput.json
+
+# Flattened files
+flattened.sol
