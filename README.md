@@ -8,7 +8,7 @@ A Solidity smart contract system for managing student grades on the Ethereum blo
 
 Learning blockchain development with:
 - [Cyfrin Updraft](https://updraft.cyfrin.io/)
-- [Dev3pack](https://www.dev3pack.com/)
+- [Dev3pack](https://www.dev3pack.xyz/)
 
 ## 📝 Project Description
 
