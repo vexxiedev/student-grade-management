@@ -22,19 +22,25 @@ This project implements a decentralized student grade management system using So
 
 ## 🎯 Features
 
-### Current Implementation (v1.0)
+### Version 2.0 (Current)
 
-- **Teacher Access Control**: Only the contract deployer (teacher) can add/update grades
-- **Student Records**: Store student name, ID, and grades for multiple subjects
-- **Grade Management**: Add and retrieve grades for different subjects
-- **Average Calculation**: Automatically calculate average grade across all subjects
-- **Student Information**: Retrieve complete student details
+**ClassroomFactory Contract:**
+- Deploy and manage multiple Student contracts
+- Create entire classrooms of students
+- Interact with all students through single interface
+- Events for real-time notifications (StudentCreated, GradeAdded)
+- Gas-optimized with calldata
+- Full NatSpec documentation
 
-### Coming Soon
+**Student Contract:**
+- Teacher Access Control
+- Student Records
+- Grade Management
+- Average Calculation
+- Student Information Retrieval
 
-- **Factory Pattern**: Deploy and manage multiple student contracts
-- **Classroom Management**: Create entire classroom with multiple students
-- **Enhanced Features**: Grade history, timestamps, and more
+### Version 1.0 (Previous)
+- Basic Student contract with single-student functionality
 
 ## 🏗️ Contract Structure
 
@@ -50,11 +56,28 @@ Inherits from TeacherManaged and implements:
 - `gradeMap` - Mapping of subjects to grades
 - `subjectNames` - Array tracking all subjects
 
+### ClassroomFactory (NEW!)
+Factory pattern for deploying and managing multiple students:
+- `listOfStudents` - Array of all Student contracts
+- `owner` - Factory deployer (teacher)
+- 
 **Key Functions:**
 - `addGrade(subject, grade)` - Add/update grade (teacher only)
 - `getGrade(subject)` - View grade for a subject
 - `getAverageGrade()` - Calculate average across all subjects
 - `getStudentInfo()` - Get student name and ID
+- `createStudent(name, id)` - Deploy new Student contract
+- `getStudent(index)` - Get Student contract by index
+- `getStudentGrade(index, subject)` - Query student's grade
+- `addGradeToStudent(index, subject, grade)` - Add grade to student
+- `getStudentInfo(index)` - Get student details
+- `getStudentAverage(index)` - Calculate student's average
+- `getStudentCount()` - Total number of students
+
+**Events:**
+- `StudentCreated` - Emitted when new student is deployed
+- `GradeAdded` - Emitted when grade is added to a student
+  
 
 ## 🚀 How to Use
 
@@ -95,6 +118,10 @@ Building this project taught me:
 - ✅ **Loops** - Iterating through arrays to calculate averages
 - ✅ **Multiple Returns** - Returning multiple values from functions
 - ✅ **Mappings & Arrays** - Combining both for efficient data storage
+- ✅ **Factory Pattern** - Deploying contracts from contracts (NEW!)
+- ✅ **Events** - Broadcasting contract activity for web apps (NEW!)
+- ✅ **Gas Optimization** - Using calldata over memory (NEW!)
+- ✅ **Multi-contract Systems** - Building interconnected smart contracts (NEW!)
 
 ## 🛠️ Technical Details
 
